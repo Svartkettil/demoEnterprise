@@ -38,9 +38,10 @@ public class BallsRepository {
         entityManager.persist(entity);
         return entity;
     }
-    public List<BallsEntity> findAllByName(){
+    public List<BallsEntity> findAllByName(String name){
         var query = entityManager.createQuery
                 ("SELECT balls FROM BallsEntity balls WHERE balls.name LIKE :name", BallsEntity.class);
+            query.setParameter("name", name);
         return query.getResultList();
     }
 

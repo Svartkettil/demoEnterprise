@@ -1,5 +1,7 @@
 package com.example.demoenterprise.dto;
 
+import com.example.demoenterprise.entity.BallsEntity;
+
 import java.math.BigDecimal;
 
 public class BallsDto {
@@ -8,11 +10,14 @@ public class BallsDto {
     String category;
     BigDecimal price;
 
-    public BallsDto(Long id, String name, String category, BigDecimal price) {
-        this.id = id;
-        this.name = name;
-        this.category = category;
-        this.price = price;
+    public BallsDto(){
+    }
+
+    public BallsDto(BallsEntity balls) {
+        this.id = balls.getId();
+        this.name = balls.getName();
+        this.category = balls.getCategory();
+        this.price = balls.getPrice();
     }
 
     public Long getId() {
