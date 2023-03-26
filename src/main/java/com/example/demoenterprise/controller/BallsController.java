@@ -41,6 +41,7 @@ public class BallsController {
             ballsRepository.insertBalls(mapper.map(balls));
         return Response.created(URI.create("balls/" + balls.getId())).build();
     }
+
     @PUT
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
